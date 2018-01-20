@@ -208,6 +208,81 @@ webpack: Compiled successfully.
 npm install --save-dev webpack-dev-middleware express
 ```
 
+webpack.config.js 中:
+```js
+module.exports = {
+    ...
+    ouput: {
+        filename: [name].bundle.js,
+        path: path.resolve(__dirname, 'dist'),
+        // 告诉 webpack-dev-middleware 运行地址
+        publicPath: '/'
+    }
+    ...
+}
+```
 
+接着要新建一个 `server.js`, 用来启动我们的服务器:
+
+project
+```shell
+  development
+  |- package.json
+  |- webpack.config.js
++ |- server.js
+  |- /dist
+  |- /src
+    |- index.js
+    |- print.js
+  |- /node_modules
+```
+server.js
+```js
+const express = require('express')
+const webpack = require('webpack')
+const WebpackDevMiddleware = require('webpack-dev-middleware')
+
+const app = express()
+const config = require('./webpack-dev-middleware')
+const compiler = webpack(config)
+
+app.use(WebpackDevMiddleware(compiler, {
+    publicPath: config.ouput.publicPath
+}))
+
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log('express is listening on ' + port)
+})
+```
+
+package.json 中, 给 `webpack-dev-middleware` 配个启动:
+```json
+...
+
+scripts: {
+    ...
+    "server": "node server.js"
+    ...
+}
+
+...
+```
+
+然后通过 `npm run server` 跑起来, 接着再改改 `print.js` 看看效果:
+
+print.js
+```js
+export default function printSome () {
+    console.log('I get called from print.js!')
+    // console.log('test webpack-dev-server!')
+    console.log('test webpack-dev-middleware!')
+}
+```
+
+结果这个配置的 `webpack-dev-middleware` 和 `watch` 是差不多的效果, 需要刷新才能看到效果, 不同的是 `webpack-dev-middleware` 运行之后 `dist` 文件夹不见了. 所以这一小节主要是学习如何自动编译和运行一个简单的开发服务器, 我们知道 `Vue.js` 中的 webpack 还可以热替换的(也就是自动刷新), 所以下面再去看看热替换.
+
+### 热替换
+模块热替换(HMR)算是 webpack 中提供的最常用的功能之一, 它可以在运行时更新各种模块, 无需我们手动刷新
 
 Created on 2017-1-19 by cara

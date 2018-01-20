@@ -12,8 +12,8 @@ module.exports = {
         // [name]将对应 entry 中的属性名
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        // 告诉服务器在哪儿运行: localhost: 3000
-        publicPath: '/'
+        // 告诉 webpack-dev-middleware 在哪儿运行: localhost: 3000
+        // publicPath: '/'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
