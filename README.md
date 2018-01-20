@@ -141,6 +141,25 @@ package.json
 }
 ```
 
-现在我们就可以通过在命令行中输入 `npm run build` 来构建我们的项目了, 打开浏览器运行 `dist/index.html` 我们就可以在页面中看到 `hello webpack` 的字样了. 到这里我们大概知道了如何开始使用 `webpack` 以及一个最基本的配置. 后面的 `asset` 会基于这个例子中的东西, 所以我把项目结构改了一下, 把这些放在 `asset` 目录中, 之后的每一个例子我都会创建一个新的文件夹来放置.
+现在我们就可以通过在命令行中输入 `npm run build` 来构建我们的项目了, 打开浏览器运行 `dist/index.html` 我们就可以在页面中看到 `hello webpack` 的字样了. 以下是我们现在的目录结构: 
+
+project
+```shell
+webpack-demo
+|- package.json
+|- webpack.config.js
+|- /dist
+  |- bundle.js
+  |- index.html
+|- /src
+  |- index.js
+|- /node_modules
+```
+
+> 如果你使用的是 npm 5，你可能还会在目录中看到一个 package-lock.json 文件
+
+到这里我们大概知道了如何开始使用 `webpack` 以及一个最基本的配置. 后面的 `asset` 会基于这个例子中的东西, 所以我把项目结构改了一下, 把这些放在 `asset` 目录中, 之后的每一个例子我都会创建一个新的文件夹来放置.
+
+前往下一节 [资源管理](https://github.com/Caraws/webpack-demo/tree/master/asset)
 
 Created on 2017-1-18 by cara
