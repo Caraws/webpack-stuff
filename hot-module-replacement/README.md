@@ -61,7 +61,7 @@ client?207d:222 [WDS] App hot update...
 log.js:23 [HMR] Checking for updates on the server...
 index.js:27 Accepting the updated printMe module!
 ```
-现在就实现我们想要的热替换啦, 不过这里有个地方要注意 **`import print from './print'` 这里引入写的 `./print` 那么下面 module,exports.accept 中就一定要写 `./print`** 这两个地方一定要对上, 之前就是这个错误我找了一下午😒.
+现在就实现我们想要的热替换啦, 打开浏览器控制台 Network 也可以看到 server 回传到浏览器发生了更新的模块, 不过这里有个地方要注意 **`import print from './print'` 这里引入写的 `./print` 那么下面 module.exports.accept 中就一定要写 `./print`** 这两个地方一定要对上, 之前就是这个错误我找了一下午😒.
 
 ### 使用 `webpack-hot-middleware` 启用 HMR
 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 是配合 `webpack-dev-middleware` 中间件来使用热替换的, 主要是看到 `Vue` 的配置用的是 `webpack-hot-middleware`, 所以来试试.
@@ -164,5 +164,6 @@ if (module.hot) {
 
 再次执行 `npm run server`, 看到命令行还是正常运行打开浏览器, 然后修改 `src/print.js` 的 console.log, 热替换也就成功啦~
 
+下一节 [Tree Shaking](https://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
 
 Created on 2017-1-22 by cara
