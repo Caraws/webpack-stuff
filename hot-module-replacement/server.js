@@ -17,8 +17,8 @@ app.use(WebpackDevMiddleware(compiler, {
 // 热替换
 app.use(WebpackHotMiddleware(compiler))
 
-
 const port = process.env.PORT || 3000
+
 app.listen(port, () => {
     console.log('express listening on ' + port)
 })

@@ -280,7 +280,7 @@ export default function printSome () {
 }
 ```
 
-结果这个配置的 `webpack-dev-middleware` 和 `watch` 是差不多的效果, 需要刷新才能看到效果, 不同的是 `webpack-dev-middleware` 运行之后 `dist` 文件夹不见了. 所以这一小节主要是学习如何自动编译和运行一个简单的开发服务器, 我们知道 `Vue.js` 中的 webpack 还可以热替换的(也就是自动刷新), 所以下面再去看看热替换.
+结果这个配置的 `webpack-dev-middleware` 和 `watch` 是差不多的效果, 需要刷新才能看到效果, 不同的是 `webpack-dev-middleware` 运行之后 `dist` 文件夹不见了.这是因为 webpack 把文件打包到了内存当中, 不生成文件的原因是因为直接从内存访问代码比从系统文件中读取更快, 而且也减少了将代码写入文件的开销. 所以这一小节主要是学习如何自动编译和运行一个简单的开发服务器, 我们知道 `Vue.js` 中的 webpack 还可以热替换的(这跟 live reload 是有本质区别的, live reload 不会保存应用状态), 所以下面再去看看热替换.
 
 下一节 [热替换](https://github.com/Caraws/webpack-demo/tree/master/hot-module-replacement)
 

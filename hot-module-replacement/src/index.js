@@ -15,18 +15,20 @@ function component () {
     element.appendChild(btn)
     return element
 }
+// document.body.appendChild(component());
 
-console.log(1)
+console.log(2)
 
 let element = component()
 document.body.appendChild(element)
 
 if (module.hot) {
-    module.hot.accept('./print.js', () => {
+    module.hot.accept('./print', function () {
         console.log('Accepting the updated printMe module!')
-
+        // printSome()
         document.body.removeChild(element)
         element = component(); 
         document.body.appendChild(element)
     });
 }
+
