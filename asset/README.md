@@ -99,4 +99,6 @@ function component () {
 
 再次打包后, 就会看到图片了, 再看看 `dist/` 中的图片的文件名就变成了类似 `ae92a8ebd5d3d01c143f75da04660d8e.jpg` 这样. 其他资源文件处理都是这样, 只要匹配响应的 loader 就行了, 我就不再一一列举了.
 
+下一节 [管理输出](https://github.com/Caraws/webpack-demo/tree/master/output)
+
 Created on 2017-1-18 by cara

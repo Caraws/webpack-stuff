@@ -199,4 +199,6 @@ Child html-webpack-plugin for "index.html":
 ```
 再看看 `dist` 文件夹, 原本没用的 `bundle.js` 已经没有了, 只剩下构建后生成的文件了.
 
+下一节 [开发](https://github.com/Caraws/webpack-demo/tree/master/development)
+
 Created on 2017-1-19 by cara
