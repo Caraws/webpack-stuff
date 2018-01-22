@@ -5,10 +5,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-    /* entry: {
-        app: './src/index.js',
-        // print: './src/print.js'
-    }, */
     context: __dirname,
     entry: [
         'webpack-hot-middleware/client?reload=true',
@@ -24,7 +20,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'this title from HtmlWebpackPlugin'
+            title: 'Hot Module Replacement'
         }),
         // 热替换
         new webpack.HotModuleReplacementPlugin(),
