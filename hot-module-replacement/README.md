@@ -162,7 +162,7 @@ if (module.hot) {
 }
 ```
 
-再次执行 `npm run server`, 看到命令行还是正常运行打开浏览器, 然后修改 `src/print.js` 的 console.log, 热替换也就成功啦~
+再次执行 `npm run server`, 看到命令行还是正常运行打开浏览器, 然后修改 `src/print.js` 的 console.log, 热替换也就成功啦~ 这个关于更多的 [热替换原理](https://zhuanlan.zhihu.com/p/30669007) 知识.
 
 下一节 [Tree Shaking](https://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
 
