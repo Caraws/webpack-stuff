@@ -109,7 +109,7 @@ module.exports = merge(common, {
 再次构建就能看到 `dist` 文件夹下多了以 `.map` 为后缀的文件.
 
 ### 指定环境
-有许多的 library 是通过关联 `process.env.NODE_ENV`(由 Node.js 暴露给脚本执行的环境变量)环境变量来决定 library 中要引用哪些内容. 比如在开发环境, 某些 library 可能会添加一些 log/控制台的警告或者测试; 在生产环境下(process.env.NODE_ENV === 'production'), library 可能就会删除或者添加一些代码. webpack 内置的 `[DefaultPlugin](https://doc.webpack-china.org/plugins/define-plugin)` 可以为所有依赖定义这个变量.
+有许多的 library 是通过关联 `process.env.NODE_ENV`(由 Node.js 暴露给脚本执行的环境变量)环境变量来决定 library 中要引用哪些内容. 比如在开发环境, 某些 library 可能会添加一些 log/控制台的警告或者测试; 在生产环境下(process.env.NODE_ENV === 'production'), library 可能就会删除或者添加一些代码. webpack 内置的 [DefaultPlugin](https://doc.webpack-china.org/plugins/define-plugin) 可以为所有依赖定义这个变量.
 
 webpack.prod.js
 ```js
