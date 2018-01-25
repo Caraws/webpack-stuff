@@ -1,10 +1,10 @@
 # 构建生产环境
-这一节主要是使用工具将网站或者应用程序构建到生产环境中, 代码延用 [tree-shaking](ttps://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
+这一节主要是使用工具将网站或者应用程序构建到生产环境中, 代码延用 [tree-shaking](https://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
 
 ## 关于配置
 由于在开发环境和生成环境的构建目标之间有很大的差距. 在开发环境下我们更注重热替换或重载能力的 source map 和本地的 web server; 而生产环境下我们关注点将放在更小的 bundle/ 更轻量的 source map 以及优化资源以改善加载时间. 于是通常都是**为不同的环境配置独立的 webpack 配置**
 
-按以上思路为每个环境配置的话, 本着不想写重复的代码, 所以还会保留一个通用配置, 这样就只需要把每个环境的特定配置指出就好. 由于分离了配置就避免不了要把通用配置合并到每个环境啊, 于是引入 `[webpack-merge](https://github.com/survivejs/webpack-merge)` 工具.
+按以上思路为每个环境配置的话, 本着不想写重复的代码, 所以还会保留一个通用配置, 这样就只需要把每个环境的特定配置指出就好. 由于分离了配置就避免不了要把通用配置合并到每个环境啊, 于是引入 [webpack-merge](https://github.com/survivejs/webpack-merge) 工具.
 
 那就开始分离之前的代码试试吧, 当然还是先安装 `webpack-merge`:
 ```zsh
