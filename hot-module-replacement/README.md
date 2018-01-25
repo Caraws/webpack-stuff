@@ -164,6 +164,49 @@ if (module.hot) {
 
 再次执行 `npm run server`, 看到命令行还是正常运行打开浏览器, 然后修改 `src/print.js` 的 console.log, 热替换也就成功啦~ 这个关于更多的 [热替换原理](https://zhuanlan.zhihu.com/p/30669007) 知识.
 
+### 样式表 HMR
+CSS 的模块热替换其实很简单, 借助 `style-loader` 和 `css-loader` 就好, 在更新 CSS 依赖项的时候, loader 会在后台使用 `module.hot.accept`.
+
+安装
+```zsh
+npm install --save-dev style-loader css-loader
+```
+
+webpack.config.js
+```js
+// ...
+module.exports = {
+    // ...
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    // ...
+}
+```
+
+在 `src` 下新建一个 `index.css` 并添加样式
+
+src/index.css
+```css
+div {
+    color: red;
+}
+```
+
+src/index.js
+```js
+import './index.css'
+
+// ...
+```
+
+`npm run server` 运行之后, 打开浏览器访问, 再修改 `src/index.css` 中的内容你就能看到热替换的效果了
+
 下一节 [Tree Shaking](https://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
 
 Created on 2017-1-22 by cara

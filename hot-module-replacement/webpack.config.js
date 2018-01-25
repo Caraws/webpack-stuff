@@ -47,5 +47,12 @@ module.exports = {
     ],
     // 构建后的文件 debug
     devtool: 'inline-source-map',
-    
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
 }

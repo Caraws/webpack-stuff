@@ -1,6 +1,7 @@
 // 入口文件
 import _ from "lodash"
 import printSome from "./print"
+import './index.css'
 
 function component () {
     let element = document.createElement('div')
