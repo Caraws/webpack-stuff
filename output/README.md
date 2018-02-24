@@ -1,5 +1,5 @@
 # webpack output 的配置
-跟着[webpack 官网](https://doc.webpack-china.org/guides/output-management/)做一遍入个门
+这个小例子将展示如何配置输出
 
 ### 准备工作
 
@@ -86,7 +86,7 @@ print.bundle.js  2.75 kB       1  [emitted]         print
 
 webapck.config.js 中, 使用插件:
 ```js
-const HtmlWebpackPlugin from 'html-webpack-plugin'
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 plugins: [
     // 使用插件将重新生成一个新的 index.html 覆盖我们原来的 index.html

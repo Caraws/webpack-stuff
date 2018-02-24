@@ -1,5 +1,5 @@
 # 开发
-这里的代码继续沿用之前 `output` 中的文件, 注意: 这里的配置仅在开发环境中使用.
+这里的代码继续沿用之前 [output](https://github.com/Caraws/webpack-demo/tree/master/output) 中的文件, 注意: 这里的配置仅在开发环境中使用.
 
 ### 准备工作
 先把 `my-index.html` 删掉, 然后修改 `webpack.config.js`
@@ -29,6 +29,15 @@ webpack.config.js 中, 加入 source map
 module.exports = {
     ...
     devtool: 'inline-source-map'
+}
+```
+
+src/print.js 中制造一个错误
+```js
+export default function printSome () {
+    // console.log('I get called from print.js!')
+
+    console.error('I am error message from print.js!')
 }
 ```
 
@@ -91,7 +100,7 @@ Child html-webpack-plugin for "index.html":
 唯一的缺点是构建完之后, 要刷新浏览器才能看到更改后的效果. 如果能自动刷新就好了, 接着试试 `webpack-dev-server` 正好有我们想要的实现功能
 
 - 使用 webpack-dev-server
-它为我们提供一个简单的 web 服务器, 而且能够实时重新加载
+它为我们提供一个简单的 web 服务器, 而且能够实时重新加载(live reload)
 
 ```zsh
 npm install --save-dev webpack-dev-server
@@ -198,10 +207,10 @@ Child html-webpack-plugin for "index.html":
        4 modules
 webpack: Compiled successfully.
 ```
-= = 之所以我又这么多输出信息是因为我改了好几次.
+= = 之所以我有这么多输出信息是因为我改了好几次.
 
 - 使用 webpack-dev-middleware (Vue 中用的就是这个)
-`webpack-dev-middleware` 是一个中间件容器, 它通过 webpack 处理文件后的文件发布到一个服务器. 内部它还是使用的 `webpack-dev-server`, 但是它可以作为一个单独的包来使用, 这样就可以自定义配置来实现自己的需求. 下面会用 `webpack-dev-middleware` 和 `express`(node.js 的一个框架) 来使用.
+`webpack-dev-middleware` 是一个中间件容器, 它通过 webpack 处理文件后的文件发布到一个服务器. `webpack-dev-server` 的内部还是使用的它, 但是它可以作为一个单独的包来使用, 这样就可以自定义配置来实现自己的需求. 下面会用 `webpack-dev-middleware` 和 `express`(node.js 的一个框架) 来使用.
 
 依然先安装 `webpack-dev-middleware` 和 `express`:
 ```zsh

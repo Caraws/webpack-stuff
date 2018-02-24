@@ -1,12 +1,12 @@
 # 热替换
-模块热替换(HMR)算是 webpack 中提供的最常用的功能之一, 它可以在运行时更新各种模块, 无需我们手动刷新. 同样热替换也只适用于开发环境, 这里也继续延用 `开发` 中的代码.
+模块热替换(HMR)算是 webpack 中提供的最常用的功能之一, 它可以在运行时更新各种模块, 无需我们手动刷新. 同样热替换也只适用于开发环境, 这里也继续延用 [开发](https://github.com/Caraws/webpack-demo/tree/master/development) 中的代码.
 
 ### 启用 HMR
 使用 `webpack` 内置的 HMR 插件, 改动 `webpack-dev-server` 的配置来启用.
 
 webpack.config.js
 ```js
-...
+// ...
 
 const webpack = require('webpack')
 
@@ -15,12 +15,12 @@ module.exports = {
         app: './src/index.js'
         // 删除 print 入口
     },
-    ...
+    // ...
     devServer: {
         contentBase: './dist',
         hot: true
     }
-    ...
+    // ...
 }
 ```
 
@@ -98,15 +98,15 @@ module.exports = {
 
 server.js
 ```js
-...
+// ...
 
 const WebpackHotMiddleware = require('webpack-hot-middleware')
 
-...
+// ...
 
 app.use(WebpackHotMiddleware(compiler))
 
-...
+// ...
 ```
 
 现在运行 `npm run server` 并修改 `/src/index.js` 或者 `/src/print.js` 文件的内容就能看见效果了.
@@ -150,7 +150,7 @@ console.log(1)
 let element = component()
 document.body.appendChild(element)
 
-// 监听引入文件的改动
+// 监听引入文件的改动 (这段可以不写的)
 if (module.hot) {
     module.hot.accept('./print', () => {
         console.log('Accepting the updated printMe module!')

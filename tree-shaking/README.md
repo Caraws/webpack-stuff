@@ -1,7 +1,7 @@
 # Tree Shaking
 Tree Shaking 通常用于描述移除 JavaScript 上下文中未引用代码, 以达到减少项目体积的目的. 他依赖于 ES6 模块系统中的静态结构特性, 例如 `import` 和 `export`.
 
-这个小节的内容用 `起步` 时的代码, 结构如下:
+这个小节的内容用 [起步](https://github.com/Caraws/webpack-demo) 时的代码, 结构如下:
 
 ```shell
 tree-shaking
@@ -61,9 +61,10 @@ module.exports = {
 }
 ```
 
-运行 `npm run build` 开始构建, 检查 `dist/bundle.js` 大约在 90 ~ 100 行左右可以看到我们原本 `math.js` 模块中的内容, 发现我们没有用到的函数 `square` 还是存在于最终的文件中. 那么当项目有一定大小时, 如果能自动删除这些无用的代码便可以大大减少项目体积, 为了解决这个问题于是引入 [UglifyJsPlugin](https://doc.webpack-china.org/plugins/uglifyjs-webpack-plugin) 它是一个可以移除无引用代码和压缩的工具.
+运行 `npm run build` 开始构建, 检查 `dist/bundle.js` 大约在 90 ~ 100 行左右可以看到我们原本 `math.js` 模块中的内容, 发现我们没有用到的函数 `square` 还是存在于最终的文件中. 那么当项目有一定大小时, 如果能自动删除这些无用的代码便可以大大减少项目体积, 为了解决这个问题于是引入 [UglifyJsPlugin](https://doc.webpack-china.org/plugins/uglifyjs-webpack-plugin).
 
 ### UglifyJsPlugin 精简代码
+`UglifyJsPlugin` 是一个可以移除无引用代码和压缩的工具.
 
 安装
 ```zsh
@@ -102,7 +103,7 @@ export const foo = lib.transform({
 
 index.js
 ```js
-import { bar } from './transform'
+import { bar } from './transforms'
 
 // 使用 bar 函数
 ```

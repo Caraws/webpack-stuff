@@ -131,7 +131,7 @@ src/index.js
 if (process.env.NODE_ENV !== 'production') {
     console.log('这是开发环境!')
 } else {
-    console.log('这是开发环境!')
+    console.log('这是生产环境!')
 }
 // ...
 ```
