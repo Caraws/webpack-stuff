@@ -154,6 +154,7 @@ Child html-webpack-plugin for "index.html":
        [3] (webpack)/buildin/module.js 517 bytes {0} [built]
         + 2 hidden modules
 ``` 
+
 可以看到使用 `CommonsChunkPlugin` 之后, 公共部分被单独分到了 common.bundle.js 中, 并将其从 main bundle 中
 移除, 减小体积. `CommonsChunkPlugin` 还可以显式地从应用程序代码中分离 vendor 模块:
 
