@@ -20,7 +20,7 @@ module.exports = merge(common, {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        // 最后分离成啥样
+        // 最后css分离成啥样
         new ExtractTextWebpackPlugin('styles.css')
     ],
     module: {

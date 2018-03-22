@@ -210,7 +210,7 @@ Child html-webpack-plugin for "index.html":
 这样公共的 lodash 就被显式的分离到了 vendor.bundle.js 中.
 
 ### 动态导入
-涉及到动态拆分代码时, webpack 提供了两个类似的技术. 第一种, 是符合 ECMAScript 提案的 `import()` 语法, 也是优先选择的方式; 第二种,是 webpack 特定的 [require.ensure](https://doc.webpack-china.org/api/module-methods#require-ensure).
+涉及到动态拆分代码时, webpack 提供了两个类似的技术. 第一种, 是符合 ECMAScript 提案的 `import()` 语法, 也是优先选择的方式; 第二种, 是 webpack 特定的 [require.ensure](https://doc.webpack-china.org/api/module-methods#require-ensure).
 
 > `import()` 调用会在内部使用 promises, 所以如果在旧版本浏览器中使用 `import()`, 记得使用 polyfill 库
 

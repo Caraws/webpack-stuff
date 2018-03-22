@@ -198,6 +198,6 @@ module.exports = merge(common, {
 
 可以先 `npm start` 看看 `style-loader` 和 `css-loader` 有没有用上, 一切正常的话 `npm run build` 在 `dist` 文件夹下你就能看到被分离出来的 css 文件了.
 
-前往下一节 [代码分离](https://github.com/Caraws/webpack-demo/tree/master/code-split)
+前往下一节 [代码分离](https://github.com/Caraws/webpack-demo/tree/master/code-splitting)
 
 Created on 2017-1-24 by cara
