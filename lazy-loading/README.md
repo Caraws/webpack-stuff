@@ -2,7 +2,7 @@
 这一节的代码继承于 [代码分离](https://github.com/Caraws/webpack-demo/tree/master/code-splitting), 懒加载是一种优化网页或应用的方式. 这是方式实际上是先把你的代码在一些逻辑断点处分离开, 然后在一些代码中完成某些操作后, 立即引用或即将引用另外一些新的代码块. 这样加快了应用的初始速度, 减轻总体积, 因为有些代码可能永远不会被加载.
 
 ### 示例
-我们的期望目标是: 当用户第一次交互时才加载一个 `print.js`, 然后 console 出一些打印信息, 这样在用户永不交互时就不会加载这个包. 为此我们要把 `lodash` 和 `print.js` 加入删除之前的 `another-module.js`.
+我们的期望目标是: 当用户第一次交互时才加载一个 `print.js`, 然后 console 出一些打印信息, 这样在用户永不交互时就不会加载这个包. 为此我们要把 `lodash` 和 `print.js` 加入并删除之前的 `another-module.js`.
 
 src/print.js
 ```
@@ -68,7 +68,7 @@ Child html-webpack-plugin for "index.html":
         + 2 hidden modules
 ```
 
-已经看到 `print.js` 被单独打包了, 然后在构建后的 `dist` 文件夹中在浏览器中打开 `index.html`, 在控制台中打开 Sources 就只会看到两个文件夹, 分别是 `index.html` 和 `app.bundle.js`. 接着点击 `button` 后 `print.bundle.js` 才被加载, console 也输出了打印消息.
+已经看到 `print.js` 被单独打包了, 然后在构建后的 `dist` 文件夹中在浏览器中打开 `index.html`, 在控制台中打开 Sources 就只会看到两个文件, 分别是 `index.html` 和 `app.bundle.js`. 接着点击 `button` 后 `print.bundle.js` 才被加载, console 也输出了打印消息.
 
 主流框架的懒加载方案:
 - React: [Code Splitting and Lazy Loading](https://reacttraining.com/react-router/web/guides/code-splitting)
