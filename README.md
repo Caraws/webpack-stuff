@@ -162,4 +162,20 @@ webpack-demo
 
 前往下一节 [资源管理](https://github.com/Caraws/webpack-demo/tree/master/asset)
 
+### 目标
+
+- [x] 资源管理(https://github.com/Caraws/webpack-demo/tree/master/asset)
+- [x] 管理输出(https://github.com/Caraws/webpack-demo/tree/master/output)
+- [x] 开发(https://github.com/Caraws/webpack-demo/tree/master/development)
+- [x] 模块热替换(https://github.com/Caraws/webpack-demo/tree/master/hot-module-replacement)
+- [x] TreeShaking(https://github.com/Caraws/webpack-demo/tree/master/tree-shaking)
+- [x] 生产环境构建(https://github.com/Caraws/webpack-demo/tree/master/production)
+- [x] 代码分离(https://github.com/Caraws/webpack-demo/tree/master/code-splitting)
+- [x] 懒加载(https://github.com/Caraws/webpack-demo/tree/master/lazy-loading)
+- [x] 缓存(https://github.com/Caraws/webpack-demo/tree/master/caching)
+- [ ] 创建 Library(https://github.com/Caraws/webpack-demo/tree/master/author-libraries)
+- [ ] Shimming(https://github.com/Caraws/webpack-demo/tree/master/shimming)
+- [ ] 渐进式网络应用(https://github.com/Caraws/webpack-demo/tree/master/progressive-web-application)
+- [ ] TypeScript(https://github.com/Caraws/webpack-demo/tree/master/typescript)
+
 Created on 2017-1-18 by cara
