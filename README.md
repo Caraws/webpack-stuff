@@ -162,6 +162,8 @@ webpack-demo
 
 前往下一节 [资源管理](https://github.com/Caraws/webpack-demo/tree/master/asset)
 
+---
+
 ### 目标
 
 - [x] [资源管理](https://github.com/Caraws/webpack-demo/tree/master/asset)
